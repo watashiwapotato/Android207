@@ -10,23 +10,21 @@ import java.net.URL
 
 import javax.net.ssl.HttpsURLConnection
 
-class HippoWebService
-{
-  private val TAG = "HIPPO_DEBUG"
+class HippoWebService {
+    private val TAG = "HIPPO_DEBUG"
 
-  fun getMethodHTTPs(strGetURL: String): String
-  {
-    var strReturn = String()
-    try {
-      val myUrl = URL(strGetURL)
-      // 2. TO DO
+    fun getMethodHTTPs(strGetURL: String): String {
+        var strReturn = String()
+        try {
+            val myUrl = URL(strGetURL)
+            // 2. TO DO
+            val connection = myUrl.openConnection() as HttpsURLConnection
+            strReturn = connection.inputStream.bufferedReader().readText()
 
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.e(TAG, e.toString())
+        }
+        return strReturn
     }
-    catch (e: Exception)
-    {
-      e.printStackTrace()
-      Log.e(TAG, e.toString())
-    }
-    return strReturn
-  }
 }
