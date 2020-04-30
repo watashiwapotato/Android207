@@ -1,0 +1,7 @@
+<resources>
+  <string name="app_name">展演資訊</string>
+
+  <string name="btn_connect">Https Connect</string>
+  <string name="str_connecting">連線中...</string>
+  <string name="msg_connection_error">Connection Error</string>
+</resources>
